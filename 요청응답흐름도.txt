@@ -1,0 +1,51 @@
+login 버튼 누른다
+로그인하면 루트로 이동한다
+
+루트/	
+루트/login/
+루트/
+
+quizzes 버튼 누른다
+퀴즈리스트를 확인하는 페이지로 이동한다
+특정퀴즈의 view details 버튼 누른다
+start quiz버튼을 누른다
+퀴즈를 풀고 submit버튼을 누른다
+퀴즈의 결과 화면이 나타난다
+
+루트/
+루트/quizzes/
+루트/특정퀴즈이름/
+루트/특정퀴즈이름/take/
+루트/특정퀴즈이름/take/
+
+progress 버튼 누른다
+퀴즈별 점수와 그간 take했던 퀴즈목록을 확인한다
+
+루트/
+루트/progress
+
+
+
+아직 버튼없음..url로 접근
+category list를 확인하고 특정 카테고리(퀴즈의주제)를 선택한다
+특정 카테고리의 퀴즈 리스트를 확인한다
+특정 퀴즈를 선택한다
+퀴즈를 풀고 submit버튼을 누른다
+퀴즈의 결과 화면이 나타난다
+
+루트/category/
+루트/category/특정카테고리주제/
+루트/특정퀴즈이름/take/
+루트/특정퀴즈이름/take/
+
+
+
+
+아직 버튼없음..url로 접근
+list of complete exams를 확인한다
+(여기서 특정 user/quiz/completed date/score/view details를 확인할 수 있다)
+특정 row의 view details를 누르고 디테일을 확인한다
+
+루트/marking/
+루트/marking/row번호/
+

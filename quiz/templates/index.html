@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<header>
+  <h1>Make Change Together</h1>
+  <p>You can take fun quizes and learn how much you love the earth!</p>
+  <img src="{% static 'quiz/images/plasticworld.jpg' %}" width="100%" alt="image here">
+</header><hr/>
+
+<div class="myuser">
+
+  {% if user.is_authenticated %}
+      <h1>Your Information</h1>
+      <p>Username: {{user.username}}</p>
+      <p>Name: {{user.first_name}} {{user.last_name}}</p>
+      <p>Email: {{user.email}}</p>
+  {% endif %}
+</div><hr/>
+
+<footer>
+
+  <p>This website is to raise awareness about plastic trash.</p>
+  <img src="{% static 'quiz/images/result.png' %}" width="200">
+  <pre>
+  0ur goal:
+
+  To establish a wide mindset with keen and effective information.
+  We want to inform people of the damage plastic has been doing not only to our ocean, but to our whole world.
+  We want people to take action and help save the environment!
+  We know that if this issue keeps going, it will turn into an inreversible problem in the future.
+
+  Our core message:
+
+  The world needs your help.
+  Plastic is taking over everyday, the speed increasing more and more.
+  One person doesn’t make a lot of impact.
+  To do this, everybody needs to participate.
+  Please share this message and join us!
+  </pre>
+
+</footer>
+
+{% endblock  %}

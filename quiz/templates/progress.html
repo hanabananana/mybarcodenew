@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load quiz_tags %}
+
+{% block title %} {% trans "Progress Page" %} {% endblock %}
+{% block description %} {% trans "User Progress Page" %} {% endblock %}
+{% block skillbar_link %}<link rel="stylesheet" href="{% static 'quiz/skillbar.css' %}">{% endblock %}
+{% block skillbar_script %}
+  <script data-require="jquery@*" data-semver="2.0.3" src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript" src="{% static 'quiz/skillbar.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+
+  <h1>{% trans "Love-Earth Indicator" %}</h1>
+  <!-- Earth Love Indicator  -->
+  <div class="skillbar">
+    <ul id="indicator">
+      <li><a href="" id="loveEarth" title="loveEarth"><i class="fa fa-trophy fa-2"></i></a></li>
+      <li><a href="" id="visitRate" title="visitRate"><i class="fa fa-star-o fa-2"></i></a></li>
+      <li><a href="" id="follower" title="follower"><i class="fa fa-futbol-o fa-2"></i></a></li>
+    </ul>
+
+    <ul id="friends">
+      <li class="sihyun">
+        <img src="{% static 'quiz/images/bongo.jpg' %}" alt="{% static 'quiz/images/noone.png' %}">
+        <div class="progressBar">
+          <span style="height:90.2%"><i></i><b>0</b></span>
+        </div>
+        <span class="name">
+          <strong style="color: green;">Sihyun Baek</strong>
+        </span>
+      </li>
+
+      <li class="yuhan">
+        <img src="{% static 'quiz/images/steve.jpg' %}" alt="{% static 'quiz/images/noone.png' %}">
+        <div class="progressBar">
+          <span style="height:89%"><i></i><b>0</b></span>
+        </div>
+        <span class="name">
+          <strong>Yuhan Lee</strong>
+        </span>
+      </li>
+
+      <li class="messi">
+        <img src="http://i.forbesimg.com/media/lists/people/lionel-messi_416x416.jpg" alt="{% static 'quiz/images/noone.png' %}">
+        <div class="progressBar">
+          <span style="height:81.4%%"><i></i><b>0</b></span>
+        </div>
+        <span class="name">
+          <strong>Lionel Messi</strong>
+        </span>
+      </li>
+
+      <li class="ibrahimovic">
+        <img src="http://www.topnews.in/sports/files/Zlatan_Ibrahimovic_2.jpg" alt="{{ static 'quiz/images/noone.png' %}">
+        <div class="progressBar">
+          <span style="height:73.6%"><i></i><b>0</b></span>
+        </div>
+        <span class="name">
+          <strong>Zlatan Ibrahimovic</strong>
+        </span>
+      </li>
+
+
+    </ul>
+  </div>
+
+
+
+
+
+
+
+  {% if cat_scores %}
+
+  <h1>{% trans "Question Category Scores" %}</h1>
+
+  <table class="table table-bordered table-striped">
+
+  	<thead>
+  	  <tr>
+  		<th>{% trans "Category" %}</th>
+  		<th>{% trans "Correctly answererd" %}</th>
+  		<th>{% trans "Incorrect" %}</th>
+  		<th>%</th>
+  	  </tr>
+  	</thead>
+
+  	<tbody>
+
+
+  	  {% for cat, value in cat_scores.items %}
+  	  <tr>
+  		<td>{{ cat }}</td>
+  		<td>{{ value.0 }}</td>
+  		<td>{{ value.1 }}</td>
+  		<td>{{ value.2 }}</td>
+  	  </tr>
+
+  	  {% endfor %}
+
+  	</tbody>
+
+  </table>
+  {% endif %}
+
+
+
+
+  {% if exams %}
+
+  <hr>
+
+  <h1>{% trans "Previous exam papers" %}</h1>
+  <p class="lead">
+	{% trans "Below are the results of exams that you have sat." %}
+  </p>
+
+  <table class="table table-bordered table-striped">
+
+	<thead>
+	  <tr>
+		<th>{% trans "Quiz Title" %}</th>
+		<th>{% trans "Score" %}</th>
+		<th>{% trans "Possible Score" %}</th>
+		<th>%</th>
+	  </tr>
+	</thead>
+
+	<tbody>
+
+	  {% for exam in exams %}
+
+	  <tr>
+		<td>{{ exam.quiz.title }}</td>
+		<td>{{ exam.current_score }}</td>
+		<td>{{ exam.get_max_score }}</td>
+		<td>{{ exam.get_percent_correct }}</td>
+	  </tr>
+
+	  {% endfor %}
+
+	</tbody>
+
+  </table>
+
+  {% endif %}
+
+
+
+
+{% endblock %}

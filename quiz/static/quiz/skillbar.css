@@ -1,0 +1,176 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css);
+
+
+* {
+   margin:0;
+   padding:0;
+}
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#indicator {
+    list-style:none;
+    width:50px;
+    height:150px;
+    float:left;
+    margin:95px 20px 0;
+    border-radius:3px;
+    background:#3b3b3b;
+}
+#indicator li {
+    width:100%;
+    height:49px;
+    border-bottom:1px solid #2b2b2b;
+}
+#indicator li:first-child {
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
+}
+#indicator li:last-child {
+    border:none;
+    -moz-border-radius: 0px 0px 3px 3px;
+    -webkit-border-radius: 0px 0px 3px 3px;
+    border-radius: 0px 0px 3px 3px;
+}
+#indicator li a {
+    display:block;
+    width:100%;
+    height:49px;
+    line-height:49px;
+    text-align:center;
+    color:#fff;
+}
+#indicator li:hover, #filtro li.active {
+    background:#1b1b1b;
+}
+
+
+#friends {
+    list-style:none;
+    width:480px;
+    height:350px;
+    float:left;
+    margin:20px 0 0 10px;
+    border-bottom:3px solid #d0d0d0;
+}
+#friends li {
+    width:100px;
+    height:350px;
+    float:left;
+    margin:0 10px;
+}
+#friends li img {
+    display:block;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    margin:0 auto 10px;
+    border:2px solid #fff;
+-moz-box-shadow: 1px 2px 5px 0px #888 ;
+-webkit-box-shadow: 1px 2px 5px 0px #888 ;
+box-shadow: 1px 2px 5px 0px #888 ;
+}
+#friends li .progressBar {
+    position:relative;
+    width:75px;
+    height:225px;
+    margin:0 auto;
+    background:#b5d0ff;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
+}
+#friends li .progressBar span {
+    position:absolute;
+    bottom:1px;
+    left:0;
+    width:75px;
+    height:100px;
+    text-align:center;
+    background:#000;
+    -moz-border-radius: 3px 3px 0px 0px;
+    -webkit-border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
+    -webkit-transition: 5s all;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-name: animationProgress;
+}
+#friends li .progressBar span i {
+    font-family:Georgia;
+    font-size:18px;
+    color:#fff;
+    -webkit-transition: 5s all;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-name: animationNumberProgress;
+    transition: 5s all;
+    animation-duration: 5s;
+    animation-name: animationNumberProgress;
+}
+#friends li .progressBar span b {
+    position:absolute;
+    top:-20px;
+    left:10px;
+    font-family:Georgia;
+    font-size:13px;
+    font-weight:500;
+    color:#000;
+    text-align:center;
+}
+
+
+#friends li.ibrahimovic .progressBar span {
+    background:#005596;
+}
+#friends li.messi .progressBar span {
+    background:#1C1D57;
+}
+#friends li.yuhan .progressBar span {
+    background:#841138;
+}
+#friends li.sihyun .progressBar span {
+    background:#FDB91B;
+}
+
+
+
+#friends li .nome {
+    display:block;
+    width:75px;
+    height:35px;
+    padding-top:5px;
+    margin:0 auto;
+    font-family:Arial, Helvetica, Sans-serif;
+    font-size:12px;
+    color:#fff;
+    text-align:center;
+    background:#222;
+    -moz-border-radius: 0px 0px 3px 3px;
+    -webkit-border-radius: 0px 0px 3px 3px;
+    border-radius: 0px 0px 3px 3px;
+}
+#friends li .nome strong {
+    display:block;
+    font-weight:700;
+}
+
+
+.percentual {
+    -webkit-transition: 1.5s all;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-name: animationProgress;
+    transition: 1.5s all;
+    animation-duration: 1.5s;
+    animation-name: animationProgress;
+}
+@-webkit-keyframes animationProgress {
+    from {
+        height:0;
+    }
+}
+@keyframes animationProgress {
+    from {
+        height:0;
+    }
+}
